@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ category.name }} Products</title>
+</head>
+<body>
+    <h1>{{ category.name }} - პროდუქცია</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - Price: {{ product.price }}
+                <br>
+                {{ product.description }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'category_list' %}">უკან</a>
+</body>
+</html>
