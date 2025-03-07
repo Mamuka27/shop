@@ -8,7 +8,11 @@ def category_list(request):
 
 def product_list_by_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
+<<<<<<< HEAD
     products = category.products.all()  # გამოვიყენეთ related_name="products"
+=======
+    products = category.products.all()  
+>>>>>>> ae1fc01972b0c1fe040a23824d925f9e6c92a511
     return render(request, 'shop/product_list.html', {
         'category': category,
         'products': products
