@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>კატეგორიების სია</title>
-</head>
-<body>
-    <h1>კატეგორიების სია</h1>
+{% extends 'shop/base.html' %}
+{% block title %}კატეგორიები{% endblock %}
+{% block content %}
+    <h2>კატეგორიების სია</h2>
     <ul>
         {% for category in categories %}
             <li>
@@ -13,5 +9,4 @@
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

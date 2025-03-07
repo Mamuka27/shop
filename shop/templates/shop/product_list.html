@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>{{ category.name }} Products</title>
-</head>
-<body>
-    <h1>{{ category.name }} - პროდუქცია</h1>
+{% extends 'shop/base.html' %}
+{% block title %}{{ category.name }} - პროდუქცია{% endblock %}
+{% block content %}
+    <h2>{{ category.name }} - პროდუქცია</h2>
     <ul>
         {% for product in products %}
             <li>
-                <strong>{{ product.name }}</strong> - Price: {{ product.price }}
-                <br>
+                <a href="{% url 'product_detail' category.slug product.slug %}">
+                    <strong>{{ product.name }}</strong>
+                </a> - Price: {{ product.price }}<br>
                 {{ product.description }}
             </li>
+        {% empty %}
+            <li>ამ კატეგორიაში პროდუქცია არ არის.</li>
         {% endfor %}
     </ul>
     <a href="{% url 'category_list' %}">უკან</a>
-</body>
-</html>
+{% endblock %}

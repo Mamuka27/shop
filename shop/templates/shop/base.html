@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}My Shop{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Shop</h1>
+        <nav>
+            <a href="{% url 'category_list' %}">კატეგორიები</a> |
+            <a href="{% url 'product_add' %}">პროდუქტის დამატება</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 My Shop</p>
+    </footer>
+</body>
+</html>
