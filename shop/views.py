@@ -9,7 +9,7 @@ def category_list(request):
 
 def product_list_by_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    products = category.products.all()  # because of related_name='products'
+    products = category.products.all()  
     return render(request, 'shop/product_list.html', {
         'category': category,
         'products': products
